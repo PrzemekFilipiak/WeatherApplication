@@ -27,6 +27,9 @@ public class UserInterface {
                 case 1:
                     createEntry();
                     break;
+                case 2:
+                    System.out.println("Pogoda");
+                    break;
                 case 0:
                     return;
             }
