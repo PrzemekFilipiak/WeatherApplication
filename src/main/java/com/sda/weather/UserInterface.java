@@ -35,6 +35,12 @@ public class UserInterface {
             }
         }
     }
+/*Dodatkowo w ramach zadania użytkownik powinien zadbać o odpowiednią walidację:
+• długość i szerokość geograficzna zgodnie z wartościami geograficznymi
+(szerokość: -90 -> S, 90 -> N, długość: -180 -> W, 180 -> E)
+• nazwa miasta – nie może być pusta
+• nazwa kraju – nie może być pusta
+• region – opcjonalny*/
 
     private void createEntry() {
         Scanner scanner = new Scanner(System.in);
