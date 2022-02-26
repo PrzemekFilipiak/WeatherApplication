@@ -1,6 +1,6 @@
-package com.sda.weather;
+package com.sda.weather.location;
 
-public class EntryController {
+public class LocationController {
     public String createEntry(String request) {
 
 

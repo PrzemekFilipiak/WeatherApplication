@@ -1,13 +1,15 @@
 package com.sda.weather;
 
+import com.sda.weather.location.LocationController;
+
 import java.util.Scanner;
 
 public class UserInterface {
 
-    private final EntryController entryController;
+    private final LocationController locationController;
 
-    public UserInterface(EntryController entryController) {
-        this.entryController = entryController;
+    public UserInterface(LocationController locationController) {
+        this.locationController = locationController;
     }
 
     public void run() {
@@ -48,11 +50,16 @@ public class UserInterface {
                 "• długość i szerokość geograficzną\n" +
                 "• region\n" +
                 "• nazwę kraju:");
-        String content = scanner.nextLine();
-        // POST: /entry
-        String request = String.format("{\"content\":\"%s\"}", content);
+        String city = scanner.nextLine();
+        String longitude = scanner.nextLine();
+        String latitude = scanner.nextLine();
+
+        // POST: /entry //\"title":"%s","content":"%s"
+        String request = String.format(
+                "{\"city\":\"%s\",\"longitude\":\"%s\",\"latitude\":\"%s\"region\":\"%s\}",
+             city, longitude, latitude, region);
         System.out.println("Wysylany json: " + request);
-        String response = entryController.createEntry(request);
+        String response = locationController.createEntry(request);
         System.out.println("Odpowiedz z serwera: " + response);
     }
 }
