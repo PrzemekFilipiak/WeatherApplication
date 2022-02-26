@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Entity
 @NoArgsConstructor
 @Table(name = "location")
-public class LocationDTO {
+public class LocationDTO { // todo LocationDTO is not an entity
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,6 +23,4 @@ public class LocationDTO {
     private String region;
     @Column(nullable = false, name = "country")
     private String country;
-
-
 }

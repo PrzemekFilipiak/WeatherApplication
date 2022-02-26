@@ -53,11 +53,17 @@ public class UserInterface {
         String city = scanner.nextLine();
         String longitude = scanner.nextLine();
         String latitude = scanner.nextLine();
+        String region = scanner.nextLine();
 
         // POST: /entry //\"title":"%s","content":"%s"
         String request = String.format(
-                "{\"city\":\"%s\",\"longitude\":\"%s\",\"latitude\":\"%s\"region\":\"%s\}",
+                "{\"city\":\"%s\",\"longitude\":\"%s\",\"latitude\":\"%s\",\"region\":\"%s\"}",
              city, longitude, latitude, region);
+
+
+        // ctrl + alt + shift + insert
+        // String exampleJSON = "{\"city\":\"London\",\"country\":\"GB\",\"region\":\"%s\",\"longitude\":\"10.0\",\"latitude\":\"20.0\"}";
+
         System.out.println("Wysylany json: " + request);
         String response = locationController.createEntry(request);
         System.out.println("Odpowiedz z serwera: " + response);
