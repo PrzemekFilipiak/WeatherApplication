@@ -1,7 +1,6 @@
 package com.sda.weather;
 
 import com.sda.weather.location.LocationController;
-
 import java.util.Scanner;
 
 public class UserInterface {
@@ -54,11 +53,12 @@ public class UserInterface {
         String longitude = scanner.nextLine();
         String latitude = scanner.nextLine();
         String region = scanner.nextLine();
+        String country = scanner.nextLine();
 
         // POST: /entry //\"title":"%s","content":"%s"
         String request = String.format(
-                "{\"city\":\"%s\",\"longitude\":\"%s\",\"latitude\":\"%s\",\"region\":\"%s\"}",
-             city, longitude, latitude, region);
+                "{\"city\":\"%s\",\"longitude\":\"%s\",\"latitude\":\"%s\",\"region\":\"%s\",\"country\":\"%s\"}",
+             city, longitude, latitude, region, country);
 
 
         // ctrl + alt + shift + insert
