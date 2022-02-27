@@ -20,6 +20,7 @@ public class UserInterface {
             System.out.println("Witaj w aplikacji pogoda, co chcesz zrobić?");
             System.out.println("1. Wybierz miasto");
             System.out.println("2. Wyswietl dane pogodowe");
+            System.out.println("3. hehe");
             System.out.println("0. Zamknij aplikację");
 
             int option = scanner.nextInt();
