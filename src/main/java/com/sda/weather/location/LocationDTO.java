@@ -7,9 +7,9 @@ public class LocationDTO {
 
     private Long id;
     private String city;
-    private String latitude;
-    private String longitude;
-    private String region;
     private String country;
+    private String region;
+    private Float longitude;
+    private Float latitude;
 
 }

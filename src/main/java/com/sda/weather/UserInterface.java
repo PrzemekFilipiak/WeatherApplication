@@ -1,6 +1,8 @@
 package com.sda.weather;
 
 import com.sda.weather.location.LocationController;
+import lombok.RequiredArgsConstructor;
+
 import java.util.Scanner;
 
 public class UserInterface {
@@ -11,7 +13,7 @@ public class UserInterface {
         this.locationController = locationController;
     }
 
-    public void run() {
+    public void runApplication() {
         System.out.println("Aplikacja jest uruchomiona\n");
 
         Scanner scanner = new Scanner(System.in);
@@ -66,7 +68,7 @@ public class UserInterface {
         // String exampleJSON = "{\"city\":\"London\",\"country\":\"GB\",\"region\":\"%s\",\"longitude\":\"10.0\",\"latitude\":\"20.0\"}";
 
         System.out.println("Wysylany json: " + request);
-        String response = locationController.createEntry(request);
+        String response = locationController.createLocation(request);
         System.out.println("Odpowiedz z serwera: " + response);
     }
 }

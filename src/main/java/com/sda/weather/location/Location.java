@@ -1,10 +1,15 @@
 package com.sda.weather.location;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import javax.persistence.*;
+import lombok.*;
+import org.hibernate.Hibernate;
 
-@Data
+import javax.persistence.*;
+import java.util.Objects;
+
+@Getter
+@Setter
+@ToString
+@RequiredArgsConstructor
 @Entity
 @NoArgsConstructor
 @Table(name = "location")
@@ -16,11 +21,32 @@ public class Location {
     @Column(nullable = false, name = "city")
     private String city;
     @Column(nullable = false, name = "latitude")
-    private String latitude;
+    private float latitude;
     @Column(nullable = false, name = "longitude")
-    private String longitude;
+    private float longitude;
     @Column(name = "region")
     private String region;
     @Column(nullable = false, name = "country")
     private String country;
+
+    public Location(String city, float latitude, float longitude, String region, String country) {
+        this.city = city;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.region = region;
+        this.country = country;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+        Location location = (Location) o;
+        return id != null && Objects.equals(id, location.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
+    }
 }
